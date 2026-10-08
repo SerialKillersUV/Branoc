@@ -62,4 +62,58 @@
       toast('Dirección seleccionada. Copia el texto con el menú de tu dispositivo.');
     }
   });
+  const viewport = document.querySelector('#sheet-viewport');
+  if (viewport) {
+    const stage = document.querySelector('#sheet-stage');
+    const output = document.querySelector('#zoom-value');
+    const section = document.querySelector('.sheet-section');
+    const fullButton = document.querySelector('#fullscreen-sheet');
+    let scale = 1;
+    let fitMode = true;
+    const bounds = { min: 0.2, max: 2.5 };
+    function setZoom(next, keepCenter = true) {
+      const centerX = (viewport.scrollLeft + viewport.clientWidth / 2) / scale;
+      const centerY = (viewport.scrollTop + viewport.clientHeight / 2) / scale;
+      scale = Math.max(bounds.min, Math.min(bounds.max, next));
+      stage.style.width = `${1558 * scale}px`;
+      stage.style.height = `${791 * scale}px`;
+      output.value = `${Math.round(scale * 100)} %`;
+      output.textContent = output.value;
+      document.querySelector('[data-zoom="out"]').disabled = scale <= bounds.min;
+      document.querySelector('[data-zoom="in"]').disabled = scale >= bounds.max;
+      if (keepCenter) {
+        viewport.scrollLeft = Math.max(0, centerX * scale - viewport.clientWidth / 2);
+        viewport.scrollTop = Math.max(0, centerY * scale - viewport.clientHeight / 2);
+      }
+    }
+    function fitSheet() {
+      fitMode = true;
+      setZoom(Math.min(1, viewport.clientWidth / 1558), false);
+      viewport.scrollTo({ left: 0, top: 0 });
+    }
+    document.querySelectorAll('[data-zoom]').forEach(button => button.addEventListener('click', () => {
+      const action = button.dataset.zoom;
+      if (action === 'fit') return fitSheet();
+      fitMode = false;
+      setZoom(action === 'actual' ? 1 : action === 'in' ? scale * 1.25 : scale / 1.25);
+    }));
+    if (section.requestFullscreen && document.fullscreenEnabled) {
+      fullButton.addEventListener('click', async () => {
+        try {
+          if (document.fullscreenElement === section) await document.exitFullscreen();
+          else await section.requestFullscreen();
+        } catch { toast('Tu navegador no permite pantalla completa. Usa los controles de zoom.'); }
+      });
+      document.addEventListener('fullscreenchange', () => {
+        fullButton.textContent = document.fullscreenElement === section ? 'Salir de pantalla completa' : 'Pantalla completa';
+        if (fitMode) fitSheet();
+      });
+    } else {
+      fullButton.hidden = true;
+    }
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(() => { if (fitMode) fitSheet(); }).observe(viewport);
+    } else window.addEventListener('resize', () => { if (fitMode) fitSheet(); }, { passive: true });
+    fitSheet();
+  }
 })();

@@ -1,6 +1,6 @@
 # Compañía Branoc
 
-Rediseño estático para GitHub Pages. Seis páginas, recursos locales y animaciones que respetan la preferencia de movimiento reducido. No requiere Node, npm, servidores, cuentas ni compilación.
+Segunda versión del rediseño para GitHub Pages: portada de estilo cartel militar, emblemas protagonistas, tipografía de gran formato y páginas interiores recompuestas. Seis páginas, recursos locales y animaciones que respetan la preferencia de movimiento reducido. No requiere Node, npm, servidores, cuentas ni compilación.
 
 ## Publicación en GitHub Pages
 
@@ -25,9 +25,9 @@ Edita `config.js`. Sus valores se aplican a todos los botones de contacto al car
 
 ## Organigrama
 
-`organigrama.html` reproduce la pestaña visible **Compañia Branoc** del documento compartido, consultada el **08/10/2026**. Incluye mando, ramas, unidades, escuadras, personal y frecuencias. No incluye las pestañas ocultas del documento.
+`organigrama.html` muestra una reproducción visual de la pestaña visible **Compañia Branoc** del documento compartido, consultada el **08/10/2026**. Conserva la distribución por columnas, las combinaciones de celdas, los colores, las filas vacías, las insignias de rango, las escuadras, el personal y las frecuencias. Incluye controles para ampliar, reducir, ajustar, volver al 100 % y activar pantalla completa cuando el navegador lo admite. En móvil se puede ampliar y desplazar la hoja sin convertirla en tarjetas. El contenido está disponible también en una tabla de texto accesible. No incluye las pestañas ocultas del documento.
 
-La vista web es una instantánea; **no se sincroniza automáticamente**. El botón **Abrir hoja actualizada** abre el documento original. Cuando cambie la plantilla, actualiza `organigrama.html` y `data/organigrama.json`, así como la fecha indicada en la página. El archivo JSON conserva las celdas de la pestaña visible para facilitar esa revisión.
+La vista web es una instantánea; **no se sincroniza automáticamente**. El botón **Abrir hoja actualizada** abre el documento original. Cuando cambie la plantilla, actualiza la reproducción `assets/organigrama-original.png`, su versión vectorial `assets/organigrama.svg` y `data/organigrama.json`, así como la fecha indicada en la página. El archivo JSON conserva las celdas de la pestaña visible para facilitar esa revisión.
 
 ## Estructura
 
@@ -35,9 +35,9 @@ La vista web es una instantánea; **no se sincroniza automáticamente**. El bot�
 - `acceso.html`: proceso completo de reclutamiento, con las dos capturas originales.
 - `normativa.html`: normativa íntegra, con índice y correcciones de redacción.
 - `unidades.html`: Cerberus, Dagger, Sereco, Draken y Cuervo, más la aclaración sobre la academia Foxtrot.
-- `organigrama.html`: estructura de la compañía.
+- `organigrama.html`: reproducción del organigrama original, con zoom, desplazamiento y pantalla completa.
 - `contacto.html`: Discord, staff y TeamSpeak 3.
-- `assets/`: emblemas, capturas, fuente local y fondo topográfico decorativo.
+- `assets/`: emblemas, capturas, fuente local, textura y reproducción del organigrama.
 - `docs/contenido-original.md`: archivo de los textos originales para mantenimiento.
 - `docs/cambios.md`: correcciones y datos que necesitan confirmación de la compañía.
 
