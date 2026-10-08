@@ -8,5 +8,27 @@
 - Se mantienen Cerberus, Dagger, Sereco, Draken y Cuervo según la web. El organigrama reproduce la pestaña visible «Compañia Branoc» (08/10/2026); no se publican las pestañas ocultas del documento.
 - No se inventan requisitos de DLC, paquetes de mods, plazos de inactividad, ejemplos de infracciones o criterios de sanción. La Administración debe aportar esos datos si desea ampliarlos.
 - Los enlaces actuales de Discord y TS3 se conservan en config.js hasta recibir los nuevos.
-- Se conservan los emblemas y las dos capturas del proceso de reclutamiento. El antiguo emblema rojo de comunidad también está disponible en assets/insignia.webp.
+- Se conservan los emblemas y las dos capturas del proceso de reclutamiento.
 - Se eliminan únicamente controles propios de Google Sites, sus etiquetas de plataforma y separadores sin contenido.
+
+## Segunda versión
+
+- Se recompone la portada como cartel de la compañía, con su emblema original, tipografía de gran formato y acentos rojos.
+- Se sustituyen las tarjetas y adornos de interfaz de la primera versión por listas, una franja de emblemas y horarios en filas.
+- La normativa conserva todos sus párrafos y se presenta como documento de lectura.
+- El organigrama reproduce la geometría de las celdas, las combinaciones, los colores, las filas y los 29 distintivos e imágenes visibles de la hoja. Se renderiza a doble resolución e incluye zoom, ajuste y pantalla completa. La imagen está verificada visualmente; no se ha podido completar una revisión de la web en navegador en esta sesión.
+
+## Tercera versión visual
+
+- Nueva paleta de verde oliva, arena y papel de campaña, con rojo óxido reservado a las llamadas a la acción.
+- Cabecera en dos filas: identidad de compañía y navegación de 24 px en escritorio. En móvil, las opciones del menú son de 29 px.
+- Títulos interiores de hasta 116 px; la escala móvil se adapta al ancho de las palabras, incluido Organigrama.
+- Portada con mapa topográfico decorativo sin datos geográficos y el emblema original.
+- Unidades con panel de insignia y nombres grandes; normativa a 19 px en escritorio y 18 px en móvil.
+- Horarios en filas de lectura clara, con horas de 28 px en móvil.
+- Controles del organigrama más grandes; la hoja conserva su disposición y colores originales.
+- Menú móvil con cierre al navegar, al pulsar fuera y con Escape.
+- Todos los textos de las seis páginas se han comparado con la versión anterior. Todos los recursos referenciados están incluidos en la entrega.
+- Se ha comprobado contenido, enlaces, sintaxis y medidas de tipografía. No se ha completado una revisión visual de la web en navegador en esta sesión.
+
+- Contacto incorpora Cooperativas de clanes: todos los párrafos y las dos capturas de su página original, con el enlace de Discord y sin inventar fechas ni campañas programadas.

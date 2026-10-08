@@ -1,12 +1,12 @@
 # Compañía Branoc
 
-Segunda versión del rediseño para GitHub Pages: portada de estilo cartel militar, emblemas protagonistas, tipografía de gran formato y páginas interiores recompuestas. Seis páginas, recursos locales y animaciones que respetan la preferencia de movimiento reducido. No requiere Node, npm, servidores, cuentas ni compilación.
+Tercera versión del rediseño para GitHub Pages: verde oliva y arena, cabecera de dos filas, navegación de gran formato, emblemas originales y páginas interiores con aspecto de manual de campaña. Seis páginas, recursos locales y animaciones que respetan la preferencia de movimiento reducido. No requiere Node, npm, servidores, cuentas ni compilación.
 
 ## Publicación en GitHub Pages
 
 1. Descomprime el ZIP.
 2. Crea un repositorio de GitHub o utiliza el repositorio destinado a la compañía.
-3. Sube **el contenido de la carpeta `branoc`** a la raíz del repositorio. `index.html` debe quedar directamente en la raíz, junto a `styles.css`, `app.js`, `config.js` y la carpeta `assets`. No subas únicamente el ZIP.
+3. Sube **todos los archivos del ZIP** a la raíz del repositorio. `index.html` debe quedar directamente en la raíz, junto a `styles.css`, `app.js`, `config.js` y la carpeta `assets`. No subas únicamente el ZIP.
 4. En **Settings → Pages → Build and deployment**, elige **Deploy from a branch**.
 5. Selecciona la rama **main** y la carpeta **/(root)**; guarda.
 6. GitHub mostrará la dirección cuando termine la publicación. Puede tardar unos minutos.
@@ -27,7 +27,7 @@ Edita `config.js`. Sus valores se aplican a todos los botones de contacto al car
 
 `organigrama.html` muestra una reproducción visual de la pestaña visible **Compañia Branoc** del documento compartido, consultada el **08/10/2026**. Conserva la distribución por columnas, las combinaciones de celdas, los colores, las filas vacías, las insignias de rango, las escuadras, el personal y las frecuencias. Incluye controles para ampliar, reducir, ajustar, volver al 100 % y activar pantalla completa cuando el navegador lo admite. En móvil se puede ampliar y desplazar la hoja sin convertirla en tarjetas. El contenido está disponible también en una tabla de texto accesible. No incluye las pestañas ocultas del documento.
 
-La vista web es una instantánea; **no se sincroniza automáticamente**. El botón **Abrir hoja actualizada** abre el documento original. Cuando cambie la plantilla, actualiza la reproducción `assets/organigrama-original.png`, su versión vectorial `assets/organigrama.svg` y `data/organigrama.json`, así como la fecha indicada en la página. El archivo JSON conserva las celdas de la pestaña visible para facilitar esa revisión.
+La vista web es una instantánea; **no se sincroniza automáticamente**. El botón **Abrir hoja original** abre el documento original. Cuando cambie la plantilla, actualiza la reproducción `assets/organigrama-original.png`, su versión vectorial `assets/organigrama.svg` y `data/organigrama.json`, así como la fecha indicada en la página. El archivo JSON conserva las celdas de la pestaña visible para facilitar esa revisión.
 
 ## Estructura
 
@@ -36,8 +36,8 @@ La vista web es una instantánea; **no se sincroniza automáticamente**. El bot�
 - `normativa.html`: normativa íntegra, con índice y correcciones de redacción.
 - `unidades.html`: Cerberus, Dagger, Sereco, Draken y Cuervo, más la aclaración sobre la academia Foxtrot.
 - `organigrama.html`: reproducción del organigrama original, con zoom, desplazamiento y pantalla completa.
-- `contacto.html`: Discord, staff y TeamSpeak 3.
-- `assets/`: emblemas, capturas, fuente local, textura y reproducción del organigrama.
+- `contacto.html`: Discord, staff, TeamSpeak 3 y Cooperativas de clanes, con sus dos capturas originales.
+- `assets/`: emblemas, capturas, fuente local, textura, mapa de curvas de nivel decorativo y reproducción del organigrama.
 - `docs/contenido-original.md`: archivo de los textos originales para mantenimiento.
 - `docs/cambios.md`: correcciones y datos que necesitan confirmación de la compañía.
 
@@ -48,3 +48,9 @@ Puedes abrir `index.html` directamente en tu ordenador para revisar la web; en G
 El menú móvil funciona sin JavaScript. La normativa y el organigrama son HTML visible, sin descargas de datos ni dependencia de Google para mostrarse. No se cargan fuentes remotas, trackers ni bibliotecas externas.
 
 Los emblemas y capturas se han recuperado de la web original. Se mantienen para el uso de la compañía. La licencia de la fuente Nimbus Sans Narrow se incluye en `assets/FONT-LICENSE.txt`.
+
+## Actualizar la versión ya subida
+
+Este ZIP contiene el proyecto completo y se extrae directamente en la raíz del repositorio. Sustituye los seis HTML, `styles.css` y `app.js`, y sube **la carpeta assets completa**, incluida `organigrama-original.png`, `organigrama.svg`, `grain.svg` y `field-map.svg`. Sube también todos los archivos de `data` y `docs`. No borres archivos de configuración de GitHub que ya tengas.
+
+En esta revisión se mantienen todos los textos de las seis páginas, las capturas, los enlaces actuales y las 66 celdas con contenido del organigrama. El menú puede cerrarse con Escape y los desplazamientos a secciones tienen en cuenta la altura real de la cabecera.

@@ -9,6 +9,23 @@
     if (config.teamspeak) node.textContent = config.teamspeak;
   });
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  mobileMenu?.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => { mobileMenu.open = false; }));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileMenu?.open) {
+      mobileMenu.open = false;
+      mobileMenu.querySelector('summary').focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (mobileMenu?.open && !mobileMenu.contains(event.target)) mobileMenu.open = false;
+  });
+  const header = document.querySelector('.site-header');
+  if (header && 'ResizeObserver' in window) {
+    new ResizeObserver(() => {
+      document.documentElement.style.setProperty('--nav-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
+    }).observe(header);
+  }
   if ('IntersectionObserver' in window && !reducedMotion.matches) {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {

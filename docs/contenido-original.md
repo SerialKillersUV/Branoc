@@ -416,3 +416,26 @@
 - button "Google Sites"
 - button "Denunciar abuso"
 - region
+
+# Cooperativas — fuente añadida
+
+Fuente: https://sites.google.com/view/comando-branoc/contacto/cooperativas
+Consultada el 08/10/2026.
+
+## Cooperativas de clanes
+
+Bienvenido al apartado de Cooperativas de clanes. Antes de nada, agradecerte que hayas pensado en Comando Branoc para realizar un evento y/o campaña conjunta.
+
+Para poder hacer una cooperación, es tan sencillo como acceder a nuestro Discord oficial cliqueando en el siguiente botón:
+
+Cooperativas: https://discord.gg/kvtkXTfEEX
+
+Una vez dentro, ve a la sección de tickets y pulsa sobre Cooperativas.
+
+[Captura original del canal y botón Cooperativas]
+
+Ahí, se te abrirá una ventana emergente de Discord con un pequeño formulario. Rellénalo y pulsa en enviar.
+
+[Captura original del formulario Cooperativas]
+
+Acto seguido, nuestra administración se pondrá en contacto contigo para aclarar la petición y llegar a un acuerdo.
