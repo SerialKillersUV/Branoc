@@ -26,19 +26,56 @@
       document.documentElement.style.setProperty('--nav-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
     }).observe(header);
   }
-  if ('IntersectionObserver' in window && !reducedMotion.matches) {
-    const observer = new IntersectionObserver(entries => {
+  let revealObserver;
+  const revealTargets = document.querySelectorAll('.reveal, .offer-list li, .patch-line a, .staff-roles li, .rule-section, .cooperatives-steps > li');
+  function startReveals() {
+    if (!('IntersectionObserver' in window) || reducedMotion.matches) return;
+    revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.06 });
-    document.querySelectorAll('.reveal').forEach(node => {
+    }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
+    revealTargets.forEach(node => {
+      if (node.parentElement.matches('.patch-line, .offer-list, .staff-roles')) {
+        const index = Array.from(node.parentElement.children).indexOf(node);
+        node.style.setProperty('--reveal-delay', `${Math.min(index, 3) * 0.07}s`);
+      }
       node.classList.add('will-reveal');
-      observer.observe(node);
+      revealObserver.observe(node);
     });
+  }
+  startReveals();
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) {
+      revealObserver?.disconnect();
+      revealTargets.forEach(node => node.classList.add('is-visible'));
+    }
+  });
+  const sectionLinks = document.querySelectorAll('.unit-index a, .rules-index nav a');
+  if (sectionLinks.length && 'IntersectionObserver' in window) {
+    const linkBySection = new Map();
+    sectionLinks.forEach(link => {
+      const id = link.getAttribute('href')?.slice(1);
+      const section = id && document.getElementById(id);
+      if (section && section.id !== 'contenido') linkBySection.set(section, link);
+    });
+    const activeSections = new Set();
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) activeSections.add(entry.target);
+        else activeSections.delete(entry.target);
+      });
+      const active = Array.from(activeSections).sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)[0];
+      if (!active) return;
+      linkBySection.forEach((link, section) => {
+        if (section === active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+    linkBySection.forEach((link, section) => spy.observe(section));
   }
   const progress = document.querySelector('.reading-progress');
   const backTop = document.querySelector('.back-top');
@@ -48,15 +85,15 @@
     scheduled = true;
     requestAnimationFrame(() => {
       const height = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.transform = `scaleX(${height > 0 ? Math.min(1, window.scrollY / height) : 0})`;
-      backTop.hidden = window.scrollY < 600;
+      if (progress) progress.style.transform = `scaleX(${height > 0 ? Math.min(1, window.scrollY / height) : 0})`;
+      if (backTop) backTop.hidden = window.scrollY < 600;
       scheduled = false;
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
-  backTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth'}));
+  backTop?.addEventListener('click', () => window.scrollTo({top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth'}));
   let toastTimer;
   function toast(message) {
     const node = document.querySelector('.toast');
@@ -87,7 +124,7 @@
     const fullButton = document.querySelector('#fullscreen-sheet');
     let scale = 1;
     let fitMode = true;
-    const bounds = { min: 0.2, max: 2.5 };
+    const bounds = { min: 0.1, max: 2.5 };
     function setZoom(next, keepCenter = true) {
       const centerX = (viewport.scrollLeft + viewport.clientWidth / 2) / scale;
       const centerY = (viewport.scrollTop + viewport.clientHeight / 2) / scale;
@@ -114,6 +151,15 @@
       fitMode = false;
       setZoom(action === 'actual' ? 1 : action === 'in' ? scale * 1.25 : scale / 1.25);
     }));
+    viewport.addEventListener('keydown', event => {
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+      if (event.key === '0') { event.preventDefault(); fitSheet(); }
+      else if (['+', '=', '-'].includes(event.key)) {
+        event.preventDefault();
+        fitMode = false;
+        setZoom(event.key === '-' ? scale / 1.25 : scale * 1.25);
+      }
+    });
     if (section.requestFullscreen && document.fullscreenEnabled) {
       fullButton.addEventListener('click', async () => {
         try {

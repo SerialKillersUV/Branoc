@@ -1,6 +1,6 @@
 # Compañía Branoc
 
-Tercera versión del rediseño para GitHub Pages: verde oliva y arena, cabecera de dos filas, navegación de gran formato, emblemas originales y páginas interiores con aspecto de manual de campaña. Seis páginas, recursos locales y animaciones que respetan la preferencia de movimiento reducido. No requiere Node, npm, servidores, cuentas ni compilación.
+Cuarta revisión del rediseño para GitHub Pages: verde oliva y arena, cabecera de dos filas, navegación de gran formato, emblemas originales y páginas interiores con aspecto de manual de campaña. Seis páginas, recursos locales y animaciones que respetan la preferencia de movimiento reducido. No requiere Node, npm, servidores, cuentas ni compilación.
 
 ## Publicación en GitHub Pages
 
@@ -17,7 +17,7 @@ Los enlaces son relativos: funcionan tanto en un dominio propio como dentro de u
 
 - Revisa las seis páginas en ordenador y móvil. La versión entregada se ha comprobado mediante verificaciones de contenido, enlaces y sintaxis; no se ha podido realizar la revisión visual en un navegador de esta sesión.
 - Confirma con la Administración la correspondencia actual de nombres entre las fichas de Unidades y el organigrama. Se han conservado ambas fuentes sin asumir equivalencias.
-- Los enlaces de Discord, TeamSpeak y descarga son los originales de la web. Se sustituirán cuando se faciliten los definitivos.
+- Discord usa la invitación facilitada el 09/10/2026: https://discord.gg/ZEfmJJxBvb. TeamSpeak y su descarga conservan los enlaces actuales de la compañía.
 
 ## Cambiar enlaces y dirección de TeamSpeak
 
@@ -34,7 +34,7 @@ La vista web es una instantánea; **no se sincroniza automáticamente**. El bot�
 - `index.html`: inicio, presentación, oferta, horarios y acceso a comunicaciones.
 - `acceso.html`: proceso completo de reclutamiento, con las dos capturas originales.
 - `normativa.html`: normativa íntegra, con índice y correcciones de redacción.
-- `unidades.html`: Cerberus, Dagger, Sereco, Draken y Cuervo, más la aclaración sobre la academia Foxtrot.
+- `unidades.html`: Cerberus, Dagger, Sereco, Draken, Cuervo y Foxtrot, academia de reclutas con el emblema proporcionado.
 - `organigrama.html`: reproducción del organigrama original, con zoom, desplazamiento y pantalla completa.
 - `contacto.html`: Discord, staff, TeamSpeak 3 y Cooperativas de clanes, con sus dos capturas originales.
 - `assets/`: emblemas, capturas, fuente local, textura, mapa de curvas de nivel decorativo y reproducción del organigrama.
@@ -53,4 +53,17 @@ Los emblemas y capturas se han recuperado de la web original. Se mantienen para 
 
 Este ZIP contiene el proyecto completo y se extrae directamente en la raíz del repositorio. Sustituye los seis HTML, `styles.css` y `app.js`, y sube **la carpeta assets completa**, incluida `organigrama-original.png`, `organigrama.svg`, `grain.svg` y `field-map.svg`. Sube también todos los archivos de `data` y `docs`. No borres archivos de configuración de GitHub que ya tengas.
 
-En esta revisión se mantienen todos los textos de las seis páginas, las capturas, los enlaces actuales y las 66 celdas con contenido del organigrama. El menú puede cerrarse con Escape y los desplazamientos a secciones tienen en cuenta la altura real de la cabecera.
+En esta revisión se mantienen todos los textos de las seis páginas, las capturas, el Discord actualizado y las 66 celdas con contenido del organigrama. El menú puede cerrarse con Escape y los desplazamientos a secciones tienen en cuenta la altura real de la cabecera.
+
+## Revisión del 09/10/2026
+
+- Foxtrot tiene ficha propia en Unidades y aparece en Inicio, con su emblema original suministrado por la compañía.
+- Discord se actualiza en `config.js` y en todos los enlaces HTML; funciona también con JavaScript desactivado.
+- Los saltos de línea opcionales conservan espacios al ocultarse en móvil: «Nos vemos en el servidor» y «Cooperativas de clanes».
+- Los párrafos se justifican con separación de palabras y guionado automático para español cuando lo admite el navegador.
+- Las seis unidades tienen índice de navegación; Inicio organiza sus emblemas en seis columnas, tres columnas o dos columnas según el espacio disponible.
+- Se añaden entradas escalonadas, transiciones de página cuando el navegador las admite, detalles de galones y costuras, y un distintivo con los colores de España. Se respeta la preferencia de movimiento reducido, incluso si cambia durante la visita.
+- El organigrama conserva la imagen y datos del Excel. Ahora puede ajustarse también a pantallas estrechas y admite `+`, `−` y `0` con el visor enfocado.
+- Se conserva la corrección sobre TS6 que estaba en la versión actual del repositorio.
+
+Sube todos los archivos descomprimidos a la raíz del repositorio, incluido `assets/foxtrot.png`. Si el navegador muestra la versión anterior después de publicar, recarga la página. Los enlaces a CSS y JavaScript llevan una versión nueva para evitar que se reutilicen los archivos antiguos.

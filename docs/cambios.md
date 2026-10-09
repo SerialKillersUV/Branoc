@@ -7,7 +7,7 @@
 - Los horarios se indican en hora peninsular española. Foxtrot se identifica como academia según la hoja compartida, sin inventar una ficha operativa.
 - Se mantienen Cerberus, Dagger, Sereco, Draken y Cuervo según la web. El organigrama reproduce la pestaña visible «Compañia Branoc» (08/10/2026); no se publican las pestañas ocultas del documento.
 - No se inventan requisitos de DLC, paquetes de mods, plazos de inactividad, ejemplos de infracciones o criterios de sanción. La Administración debe aportar esos datos si desea ampliarlos.
-- Los enlaces actuales de Discord y TS3 se conservan en config.js hasta recibir los nuevos.
+- Discord se actualiza al enlace proporcionado por la compañía el 09/10/2026. La dirección de TS3 se conserva.
 - Se conservan los emblemas y las dos capturas del proceso de reclutamiento.
 - Se eliminan únicamente controles propios de Google Sites, sus etiquetas de plataforma y separadores sin contenido.
 
@@ -32,3 +32,14 @@
 - Se ha comprobado contenido, enlaces, sintaxis y medidas de tipografía. No se ha completado una revisión visual de la web en navegador en esta sesión.
 
 - Contacto incorpora Cooperativas de clanes: todos los párrafos y las dos capturas de su página original, con el enlace de Discord y sin inventar fechas ni campañas programadas.
+
+## Cuarta revisión
+
+- Foxtrot pasa de nota informativa a ficha completa de academia de reclutas, con el emblema aportado y el horario ya indicado. Se añade también a Inicio y al índice de unidades.
+- La invitación https://discord.gg/ZEfmJJxBvb sustituye a la antigua en todas las páginas y en config.js.
+- Se corrige el espacio ausente al ocultar los saltos de línea de los títulos en móvil.
+- Se justifica el texto de lectura y se mantiene alineación natural en navegación, títulos, controles y horas.
+- Se añaden animaciones escalonadas, transiciones de página compatibles y detalles gráficos de galones, costuras y cinta con los colores de España.
+- Los índices señalan la sección que se está leyendo. El organigrama se ajusta a pantallas más estrechas y admite zoom con teclado.
+- Se ha comparado con la versión actual de GitHub y se conserva su cambio sobre TS6.
+- Verificación: integridad de todos los párrafos de normativa, 66 celdas del organigrama, enlaces internos, imágenes, identificadores, sintaxis y espacios. La revisión visual en navegador no se ha completado en esta sesión.
